@@ -6,3 +6,6 @@ build
 # OS
 .DS_Store
 Thumbs.db
+
+# AI Slop
+AGENTS.md
