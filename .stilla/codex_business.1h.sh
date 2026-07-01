@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Uses `$HOME/.codex/auth.json` to get the access token for Codex Business usage.
-
 path="${HOME:-~}/.codex/auth.json"
 [ -f "$path" ] || exit 1
 
