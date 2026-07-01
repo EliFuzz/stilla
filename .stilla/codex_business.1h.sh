@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Uses `$HOME/.codex/auth.json` to get the access token for Codex usage.
+# requires `$HOME/.codex/auth.json`
 path="${HOME:-~}/.codex/auth.json"
 [ -f "$path" ] || exit 1
 
