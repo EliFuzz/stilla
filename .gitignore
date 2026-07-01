@@ -1,0 +1,8 @@
+# Artifacts
+target
+build
+.ort-cache
+
+# OS
+.DS_Store
+Thumbs.db
