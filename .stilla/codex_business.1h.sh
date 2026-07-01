@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Uses `$HOME/.codex/auth.json` to get the access token for Codex Business usage.
+
 path="${HOME:-~}/.codex/auth.json"
 [ -f "$path" ] || exit 1
 
@@ -9,4 +11,4 @@ _json_extract() {
 
 response=$(echo $(curl -s "https://chatgpt.com/backend-api/wham/usage" -H "Authorization: Bearer $(_json_extract access_token < "$path")" -H "Accept: application/json") | tr '\n' ' ')
 
-echo '{"title":"Codex '"$(printf '%s\n' "$response" | _json_extract used_percent | sed 's/\..*//')"'%","items":[{"item_type":"text","title":"'"$(printf '%s\n' "$response" | _json_extract used | sed 's/\..*//')"' / '"$(printf '%s\n' "$response" | _json_extract limit | sed 's/\..*//')"' ('"$(date -r "$(printf '%s\n' "$response" | _json_extract reset_at)" '+%Y-%m-%d %I:%M %p' 2>/dev/null)"')"}]}'
+echo '{"title":"Codex '"$(echo "$response" | _json_extract used_percent | sed 's/\..*//')"'%","items":[{"item_type":"text","title":"'"$(echo "$response" | _json_extract used | sed 's/\..*//')"' / '"$(echo "$response" | _json_extract limit | sed 's/\..*//')"' ('"$(date -r "$(echo "$response" | _json_extract reset_at)" '+%Y-%m-%d %I:%M %p' 2>/dev/null)"')"}]}'
