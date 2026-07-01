@@ -4,6 +4,15 @@ Small tray. Big status.
 
 > Drop a script. Read it in your menubar.
 
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/c5d7f907-b569-4992-b99c-bf7c8a4ba638" /></td>
+      <td><img src="https://github.com/user-attachments/assets/28018280-f8c3-4a76-9330-860dba9fd684" /></td>
+    </tr>
+  </tbody>
+</table>
+
 Stilla is a cross-platform menubar/system tray utility that runs your shell scripts on a timer/schedule and shows their output right in the system tray.
 
 Write any script, name it with an interval like `status.30s.sh`, and Stilla parses its JSON output into a live tray icon title and a dynamic, clickable menu. No windows. No config files. Just your menubar.
